@@ -1,3 +1,4 @@
 class Project < ApplicationRecord
-  has_and_belongs_to_many(:divisions)
+  has_many :employees_projects
+  has_and_belongs_to_many(:employees)
 end
