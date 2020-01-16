@@ -1,0 +1,43 @@
+SETUP WORKFLOW
+
+$ rails new your_app_name                    //create ruby rails files, folders, and databases
+$ bundle                                     //run once gems are all in Gemfile
+$ bundle exec rails generate rspec:install    //sets up rspec as testing framework
+$ psql                                        // runs postgres
+$ rake db:create                              // creates databases (development and test)
+$ rails generate migration create_tablename   //creates table based on migration
+
+$ rails g migration add_foreign_key_for_songs //links foreign key to column
+a= add foreign key code stuff
+
+db/migrate/939393_create_tablename  => setup migration file
+$ rake db:migrate                             //migrates table settings into db
+$ rake db:test:prepare                        //mimics migration settings into test db
+
+a= app/models/ create .rb for each table
+
+a= for each app/models/...rb
+  class Song < ApplicationRecord
+    belongs_to :album
+  end
+
+a= create models folder in spec
+a= create a spec file for each class
+a= edit rails_helper.rb (see file)
+
+a= config/routes.rb (see file)
+
+a= app/controllers/ create one lala_controller.rb for each class
+a= app/controllers/ each class create CRUD
+
+
+a= app/views create views folders for each class
+a= app/views/class create views for each class to work with CRUD functions
+a= app/views/class(s) edit view files
+
+
+
+$ rails server                                //starts localhost:3000, alt '$ rails s'
+$ rake db:drop                                //drops both databases
+$ rake db:rollback                            //reverts db to previous state
+$ rails console                               //opens rails irb
