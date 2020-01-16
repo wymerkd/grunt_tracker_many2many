@@ -14,3 +14,15 @@
 <p><%= link_to "Create new division", new_division_path %></p>
 
 <%= image_tag "dielawn.jpg"%>
+
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= link_to project.name, project_path(project) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no projects yet.</p>
+<% end %>
+
+<p><%= link_to "Add a project", new_project_path(@project) %></p>

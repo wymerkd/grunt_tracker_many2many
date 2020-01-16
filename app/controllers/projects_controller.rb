@@ -1,5 +1,11 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @divisions = Division.all
+    @projects = Project.all
+    render :index
+  end
+
   def new
     # @employee= Employee.find(params[:employee_id])
     @project = Project.new
@@ -17,7 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @employee = Employee.find(params[:employee_id])
+    # @employee = Employee.find(params[:employee_id])
     @project = Project.find(params[:id])
     render :edit
   end
@@ -31,7 +37,7 @@ class ProjectsController < ApplicationController
   def update
     @project= Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to employee_path(@project.employee)
+      redirect_to project_path(@project)
     else
       render :edit
     end
@@ -40,7 +46,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to employee_path(@project.employee)
+    redirect_to divisions_path
   end
 
   private

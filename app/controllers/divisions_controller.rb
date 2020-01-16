@@ -2,6 +2,7 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
+    @projects = Project.all
     render :index
   end
 
