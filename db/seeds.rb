@@ -13,3 +13,13 @@ Division.destroy_all
 end
 
 p "Created #{Division.count} divisions"
+
+
+
+Project.destroy_all
+
+20.times do |index|
+  Project.create!(name: Faker::Hacker.noun)
+end
+
+p "Created #{Project.count} projects"

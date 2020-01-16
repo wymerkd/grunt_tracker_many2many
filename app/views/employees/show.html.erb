@@ -6,4 +6,5 @@
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
 
+<p><%= link_to "Assign employee to a project", new_employees_projects_path(@employee, @project) %></p>
 <p><%= link_to "Return to division", division_path(@division) %></p>

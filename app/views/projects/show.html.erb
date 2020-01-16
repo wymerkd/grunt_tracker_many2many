@@ -1,0 +1,8 @@
+<h2>Project: <%= @project.name %></h2>
+
+<p><%= link_to "Edit project", edit_employee_project_path(@project) %></p>
+<p><%= link_to "Delete project", employee_project_path(@project),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<!-- <p><%= link_to "Return to home", index_division_path %></p> -->
