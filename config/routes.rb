@@ -4,7 +4,18 @@ Rails.application.routes.draw do
     resources :employees
   end
   # resources :employees do
-    resources :projects
+    resources :projects do
+      member do
+        post :add
+        post :remove
+      end
+    end
+    resources :employees do
+      member do
+        post :add
+        post :remove
+      end
+    end
   end
   # resources :projects do
   #   resources :employees

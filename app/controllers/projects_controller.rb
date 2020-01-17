@@ -34,6 +34,12 @@ class ProjectsController < ApplicationController
     render :show
   end
 
+  def add
+    @project = Project.create(name: "A Love Supreme")
+    @employee = Employee.create(name: "John Coltrane")
+    project.employees << employee
+  end
+
   def update
     @project= Project.find(params[:id])
     if @project.update(project_params)

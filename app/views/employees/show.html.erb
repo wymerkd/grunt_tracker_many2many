@@ -7,4 +7,9 @@
                                        :method => "delete"} %></p>
 
 
+<%= form_for "project", :url => {:action => "add"} do |f| %>
+  <%= f.submit "Add Project"  %>
+  <%= f.select :project, @projects %>
+  <% end %>
+
 <p><%= link_to "Return to division", division_path(@division) %></p>
